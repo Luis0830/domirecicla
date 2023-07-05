@@ -8,6 +8,8 @@ import Recicla from "./pages/Recicla";
 import Dashboard from "./pages/Dashboard";
 import Error from "./pages/Error";
 import { AuthContextProvider } from "./context/AuthContext";
+import Account from "./pages/Account";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
         <Route path="/aprende" element={<Aprende />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
         <Route path="/recicla" element={<Recicla />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="*" element={<Error />} />
