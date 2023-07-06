@@ -6,6 +6,7 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Recicla from "./pages/Recicla";
 import Dashboard from "./pages/Dashboard";
+import Location from "./components/Location";
 import Error from "./pages/Error";
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from "./pages/Account";
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/aprende" element={<Aprende />} />
+        <Route path="/location" element={<Location />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
