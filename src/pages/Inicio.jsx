@@ -5,9 +5,15 @@ import ImgCarousel from '../components/ImgCarrusel'
 
 export default function Inicio() {
   return (
-    <div>
+    <>
       <Navbar />
+      <div>
       <ImgCarousel />
-    </div>
+      <ImgCarousel />
+      <ImgCarousel />
+      <ImgCarousel />
+      <ImgCarousel />
+      </div>
+    </>
   )
 }

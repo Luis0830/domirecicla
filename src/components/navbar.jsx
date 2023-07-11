@@ -3,12 +3,23 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [navColor,setNavColor] = useState(false);
+
+const ChangeColor = () => {
+    if(window.scrollY >= 60) {
+        setNavColor(true)
+    }else {
+        setNavColor(false)
+    }
+}
+
+window.addEventListener('scroll', ChangeColor)
 
   return (
-    <nav className="bg-gray-800 text-gray-100">
+    <nav className=" bg-white text-green-dark sticky top-0 z-50 font-medium" >
       <div className="px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="text-white text-2xl font-bold">Logo</div>
+          <Link to='/'><img src={require('../images/logo.png')} height='82' width='100%' alt='logo' className="text-white text-2xl font-bold" /></Link>
           <div className="md:hidden">
             <button type="button" onClick={() => setIsOpen(!isOpen)} className="block text-gray-100 hover:text-white focus:text-white focus:outline-none">
               <svg className="h-6 w-6 fill-current" viewBox="0 0 24 24">
