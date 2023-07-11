@@ -15,7 +15,6 @@ import ProtectedRoute from "./components/ProtectedRoute";
 function App() {
   return (
     <div>
-      <p>Hola</p>
       <AuthContextProvider>
       <Routes>
         <Route path="/" element={<Inicio />} />
