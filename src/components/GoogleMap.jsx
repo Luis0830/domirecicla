@@ -1,16 +1,37 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
-function GoogleMap({ lat, lng, zoom }) {
-  const mapRef = useRef(null);
-
+const GoogleMap = () => {
+  const googleMapRef = useRef(null);
+  
   useEffect(() => {
-    const map = new window.google.maps.Map(mapRef.current, {
-      center: { lat, lng },
-      zoom,
+    const googleScript = document.createElement('script');
+    googleScript.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}`;
+    googleScript.async = true;
+    googleScript.defer = true;
+    window.document.body.appendChild(googleScript);
+    googleScript.addEventListener('load', function() {
+      createGoogleMap();
     });
-  }, [lat, lng, zoom]);
+  }, []);
 
-  return <div ref={mapRef} style={{ height: "400px", width: "100%" }} />;
-}
+  const createGoogleMap = () => {
+    new window.google.maps.Map(googleMapRef.current, {
+      zoom: 16,
+      center: {
+        lat: 43.642567,
+        lng: -79.387054,
+      },
+      disableDefaultUI: true,
+    });
+  };
+
+  return (
+    <div
+      id="google-map"
+      ref={googleMapRef}
+      style={{ width: '400px', height: '300px' }}
+    />
+  );
+};
 
 export default GoogleMap;

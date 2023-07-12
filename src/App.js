@@ -11,8 +11,21 @@ import Error from "./pages/Error";
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from "./pages/Account";
 import ProtectedRoute from "./components/ProtectedRoute";
+import { useEffect } from "react";
 
 function App() {
+  
+  useEffect(() => {
+    if (!document.querySelector('#google-maps-script')) {
+      const script = document.createElement('script');
+      script.id = 'google-maps-script';
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${process.env.REACT_APP_API_KEY}`;
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }, []);
+
   return (
     <div>
       <AuthContextProvider>
