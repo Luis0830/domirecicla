@@ -5,6 +5,7 @@ import icon2 from '../images/inicio2.png'
 import icon1 from '../images/inicio1.png'
 import icon3 from '../images/inicio3.png'
 import icon4 from '../images/inicio4.png'
+import Footer from '../components/Footer'
 
 
 export default function Inicio() {
@@ -70,6 +71,7 @@ export default function Inicio() {
         </div>
       </div>
     </div>
+    <Footer />
   </>
   )
 }
