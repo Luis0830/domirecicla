@@ -2,7 +2,7 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Inicio from "./pages/Inicio";
 import Aprende from "./pages/Aprende";
-import Login from "./components/Login";
+import Login from "./pages/Login";
 import Signup from "./components/Signup";
 import Recicla from "./pages/Recicla";
 import Dashboard from "./pages/Dashboard";

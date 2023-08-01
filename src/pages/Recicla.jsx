@@ -46,36 +46,36 @@ export default function Recicla() {
         <div className='flex gap-x-6 mt-10 text-center content-center items-center justify-center'>
           <div className='' onClick={() => filterLocations(locationCollectionRef2)}>
             <p className=' font-bold text-green-dark'>Plastico</p>
-            <div className='w-[130px] h-[130px] bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer '>
-              <img src={icon1} alt="Image" className="p-3 w-[80%] sm:w-[80%] lg:w-[150%]" />
+            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer '>
+              <img src={icon1} alt="Image" className="p-3 	object-fit: contain; " />
             </div>
           </div>
 
           <div onClick={() => filterLocations(locationCollectionRef4)} className='items-center' >
             <p className=' font-bold text-green-dark'>Papel</p>
-            <div className='w-[130px] h-[130px]  bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon2} alt="Image" className="p-3 w-[80%] sm:w-[80%] lg:w-[150%]" />
+            <div className=' bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
+              <img src={icon2} alt="Image" className="p-3 	object-fit: contain;" />
             </div>
           </div>
 
           <div onClick={() => filterLocations(locationCollectionRef1)}>
             <p className=' font-bold text-green-dark'>Metal</p>
-            <div className=' w-[130px] h-[130px]  bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon3} alt="Image" className=" p-3 w-[60%] sm:w-[50%] lg:w-[150%]" />
+            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
+              <img src={icon3} alt="Image" className=" p-3" />
             </div>
           </div>
 
           <div onClick={() => filterLocations(locationCollectionRef3)}>
             <p className=' font-bold text-green-dark'>Contenedores</p>
-            <div className='w-[130px] h-[130px]  bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon4} alt="Image" className=" p-5 w-[60%] sm:w-[50%] lg:w-[150%]" />
+            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
+              <img src={icon4} alt="Image" className=" p-3" />
             </div>
           </div>
 
           <div onClick={() => filterLocations(locationCollectionRef)}>
             <p className=' font-bold text-green-dark'>Centros de reciclaje</p>
-            <div className='w-[200px] h-[130px]  h-[100%] bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon5} alt="Image" className="p-2 w-[60%] sm:w-[50%] lg:w-[150%]" />
+            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
+              <img src={icon5} alt="Image" className="p-3" />
             </div>
           </div>
         </div>

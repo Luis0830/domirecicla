@@ -4,7 +4,7 @@ import logo from '../images/logo.png'; // reemplaza con tu ruta de logo real
 
 const Footer = () => {
     return (
-        <footer className="bg-light-green text-white mt-10 p-20">
+        <footer className="bg-light-green text-white mt-auto p-20">
             <div className="container mx-auto flex flex-wrap justify-between items-center">
                 <div className="w-full md:w-1/4 text-center md:text-left">
                     <Link to="/">
