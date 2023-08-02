@@ -6,12 +6,11 @@ import Login from "./pages/Login";
 import Signup from "./components/Signup";
 import Recicla from "./pages/Recicla";
 import Dashboard from "./pages/Dashboard";
-import Location from "./components/Location";
 import Error from "./pages/Error";
 import { AuthContextProvider } from "./context/AuthContext";
 import Account from "./pages/Account";
 import ProtectedRoute from "./components/ProtectedRoute";
-import { useEffect } from "react";
+import Nosotros from "./pages/Nosotros";
 
 function App() {
   
@@ -23,12 +22,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/aprende" element={<Aprende />} />
-        <Route path="/location" element={<Location />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/account" element={<ProtectedRoute><Account /></ProtectedRoute>} />
+        <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
         <Route path="/recicla" element={<Recicla />} />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/nosotros" element={<Nosotros />} />
+        {/* <Route path="/dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} /> */}
         <Route path="*" element={<Error />} />
       </Routes>
       </AuthContextProvider>

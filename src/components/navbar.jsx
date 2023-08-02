@@ -26,7 +26,7 @@ const Navbar = () => {
           </div>
           <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
             {location.pathname !== "/recicla" && <Link to="/recicla" className="px-4 font-semibold">Reciclar</Link>}
-            {location.pathname !== "/quienes-somos" && <Link to="/quienes-somos" className="px-4 font-semibold">Quienes somos</Link>}
+            {location.pathname !== "/nosotros" && <Link to="/nosotros" className="px-4 font-semibold">Quienes somos</Link>}
             {location.pathname !== "/aprende" && <Link to="/aprende" className="px-4 font-semibold">Beneficios del reciclaje</Link>}
             {location.pathname !== "/login" && <Link to="/login" className="px-4 font-semibold">Acceder</Link>}
           </div>

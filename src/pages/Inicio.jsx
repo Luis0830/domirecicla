@@ -36,7 +36,7 @@ export default function Inicio() {
               Aprende Sobre Prácticas Sostenibles
             </h1>
             <p className='text-[12px] sm:text-[10px] lg:text-[12px] text-green-dark text-center font-semibold'>
-              En RDRecycleHub, creemos en la importancia de la educación para un mundo más sostenible. Por eso, ofrecemos una amplia gama de recursos y consejos sobre cómo reducir, reutilizar y reciclar, para ayudarte a hacer elecciones más respetuosas con el medio ambiente en tu vida cotidiana.
+              En DomiRecicla, creemos en la importancia de la educación para un mundo más sostenible. Por eso, ofrecemos una amplia gama de recursos y consejos sobre cómo reducir, reutilizar y reciclar, para ayudarte a hacer elecciones más respetuosas con el medio ambiente en tu vida cotidiana.
             </p>
           </div>
           <div className="flex items-center justify-center">

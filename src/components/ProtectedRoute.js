@@ -9,7 +9,7 @@ const ProtectedRoute = ({ children }) => {
         return <Navigate to='/' />
     }
   return (
-    <div>ProtectedRoute</div>
+    <div>{children}</div>
   )
 }
 
