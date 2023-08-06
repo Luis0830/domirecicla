@@ -9,10 +9,10 @@ export default function AboutUs() {
       <div className="flex-grow container mx-auto p-6">
         <div className="flex flex-col lg:flex-row bg-white rounded-md shadow-lg p-6 mb-6">
           <div className="w-full lg:w-1/2 flex justify-center lg:justify-start mb-6 lg:mb-0">
-            <img src="/path/to/your/image.jpg" alt="About us" className="w-3/4 h-64 object-cover rounded-md"/>
+            <img src="https://i.imgur.com/7fUNqpF.png" alt="About us" className="w-3/4 h-full object-cover rounded-md"/>
           </div>
-          <div className="w-full lg:w-1/2">
-            <h1 className="text-3xl font-bold mb-4">Acerca de Nosotros</h1>
+          <div className="w-full lg:w-1/2 text-justify">
+            <h1 className="text-3xl font-bold mb-4 text-green-dark">Acerca de Nosotros</h1>
             <p className="text-lg mb-4">
               Somos DomiRecicla, una plataforma digital creada con el objetivo de promover y facilitar el reciclaje en la República Dominicana. Nacimos de la necesidad de afrontar el desafío de la gestión de residuos en nuestro país y de nuestro compromiso con la conservación del medio ambiente.
             </p>

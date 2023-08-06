@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { HiMenu } from 'react-icons/hi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,13 +23,15 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           <Link to="/"><img src={require('../images/logo.png')} height='82' width='100%' alt='logo' className="text-white text-2xl font-bold" /></Link>
           <div className="md:hidden">
-            {/* Resto del código */}
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <HiMenu className='text-[40px]'/>
+            </button>
           </div>
-          <div className={`md:block ${isOpen ? 'block' : 'hidden'}`}>
-            {location.pathname !== "/recicla" && <Link to="/recicla" className="px-4 font-semibold">Reciclar</Link>}
-            {location.pathname !== "/nosotros" && <Link to="/nosotros" className="px-4 font-semibold">Quienes somos</Link>}
-            {location.pathname !== "/aprende" && <Link to="/aprende" className="px-4 font-semibold">Beneficios del reciclaje</Link>}
-            {location.pathname !== "/login" && <Link to="/login" className="px-4 font-semibold">Acceder</Link>}
+          <div className={`transition duration-500 ease-in-out transform ${isOpen ? 'block' : 'hidden'} md:flex  md:items-center md:w-auto`}>
+            {location.pathname !== "/recicla" && <Link to="/recicla" className="block md:inline-block mt-4 md:mt-0 mr-6 no-underline" onClick={() => setIsOpen(false)}>Reciclar</Link>}
+            {location.pathname !== "/nosotros" && <Link to="/nosotros" className="block md:inline-block mt-4 md:mt-0 mr-6 no-underline" onClick={() => setIsOpen(false)}>Quienes somos</Link>}
+            {location.pathname !== "/aprende" && <Link to="/aprende" className="block md:inline-block mt-4 md:mt-0 mr-6 no-underline" onClick={() => setIsOpen(false)}>Beneficios del reciclaje</Link>}
+            {location.pathname !== "/login" && <Link to="/login" className="block md:inline-block mt-4 md:mt-0 mr-6 no-underline" onClick={() => setIsOpen(false)}>Acceder</Link>}
           </div>
         </div>
       </div>

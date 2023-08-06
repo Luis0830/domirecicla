@@ -48,7 +48,6 @@ export default function Location() {
         <input type='number' className='border p-2 rounded-md' placeholder='Longitud' onChange={(event) => {setNewLog(event.target.value)}}/>
         <input type='number' className='border p-2 rounded-md' placeholder='Tipo' onChange={(event) => {setNewTipo(event.target.value)}}/>
         <input type='number' className='border p-2 rounded-md' placeholder='Horario' onChange={(event) => {setNewHor(event.target.value)}}/>
-        <input type='number' className='border p-2 rounded-md' placeholder='Horario' onChange={(event) => {setNewCont(event.target.value)}}/>
         <button className='bg-blue text-white p-2 w-[50%] rounded-md mt-2' onClick={CreateLocation}>Agregar</button>
         </div>
         {location.map((location) => { 

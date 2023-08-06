@@ -14,6 +14,8 @@ import Contact from '../components/Contact';
 export default function Recicla() {
 
   const [locations, setLocations] = useState([]);
+  const [selectedFilter, setSelectedFilter] = useState(null); // Nuevo estado
+
   const locationCollectionRef = collection(db, "location");
   const locationCollectionRef1 = collection(db, "metal");
   const locationCollectionRef2 = collection(db, "plastico");
@@ -28,9 +30,10 @@ export default function Recicla() {
     setLocations(processedData);
   };
 
-  const filterLocations = (locationCollection) => {
+  const filterLocations = (locationCollection, filterName) => {
     console.log("Location collection in filterLocations:", locationCollection);
     getLocation(locationCollection);
+    setSelectedFilter(filterName); // Actualizar filtro seleccionado
   };
 
   useEffect(() => {
@@ -41,58 +44,58 @@ export default function Recicla() {
   return (
     <div>
       <Navbar />
-      <div className='flex-col content-center items-center justify-center text-center'>
-        <h1 className=' font-bold text-xl text-green-dark'>Elige la opcion para reciclar</h1>
-        <div className='flex gap-x-6 mt-10 text-center content-center items-center justify-center'>
-          <div className='' onClick={() => filterLocations(locationCollectionRef2)}>
-            <p className=' font-bold text-green-dark'>Plastico</p>
-            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer '>
-              <img src={icon1} alt="Image" className="p-3 	object-fit: contain; " />
-            </div>
+      <div className='flex flex-col items-center justify-center text-center'>
+        <h1 className='font-bold text-xl text-green-dark'>Elige la opción para reciclar</h1>
+        <div className='flex gap-x-6 mt-10'>
+        <div>
+          <p className='font-bold text-green-dark '>Plastico</p>
+          <div className={`w-32 h-32 rounded-[25px] cursor-pointer flex flex-col items-center justify-center ${selectedFilter === "plastico" ? 'bg-blue-400' : 'bg-light-green bg-opacity-[60%]'}`} onClick={() => filterLocations(locationCollectionRef2, "plastico")}>
+            <img src={icon1} alt="Image" className="p-3 object-contain" />
+          </div>
+          </div>
+          <div>
+          <p className='font-bold text-green-dark'>Papel</p>
+          <div className={`w-32 h-32 rounded-[25px] cursor-pointer flex flex-col items-center justify-center ${selectedFilter === "papel" ? 'bg-blue-400' : 'bg-light-green bg-opacity-[60%]'}`} onClick={() => filterLocations(locationCollectionRef4, "papel")}>
+            <img src={icon2} alt="Image" className="p-3 object-contain" />
+          </div>
           </div>
 
-          <div onClick={() => filterLocations(locationCollectionRef4)} className='items-center' >
-            <p className=' font-bold text-green-dark'>Papel</p>
-            <div className=' bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon2} alt="Image" className="p-3 	object-fit: contain;" />
-            </div>
+          <div>
+          <p className='font-bold text-green-dark'>Metal</p>
+          <div className={`w-32 h-32 rounded-[25px] cursor-pointer flex flex-col items-center justify-center ${selectedFilter === "metal" ? 'bg-blue-400' : 'bg-light-green bg-opacity-[60%]'}`} onClick={() => filterLocations(locationCollectionRef1, "metal")}>
+            <img src={icon3} alt="Image" className="p-3 object-contain" />
+          </div>
           </div>
 
-          <div onClick={() => filterLocations(locationCollectionRef1)}>
-            <p className=' font-bold text-green-dark'>Metal</p>
-            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon3} alt="Image" className=" p-3" />
-            </div>
+          <div>
+          <p className='font-bold text-green-dark'>Contenedores</p>
+          <div className={`w-32 h-32 rounded-[25px] cursor-pointer flex flex-col items-center justify-center ${selectedFilter === "contenedor" ? 'bg-blue-400' : 'bg-light-green bg-opacity-[60%]'}`} onClick={() => filterLocations(locationCollectionRef3, "contenedor")}>
+            <img src={icon4} alt="Image" className="p-3 object-contain" />
+          </div>
           </div>
 
-          <div onClick={() => filterLocations(locationCollectionRef3)}>
-            <p className=' font-bold text-green-dark'>Contenedores</p>
-            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon4} alt="Image" className=" p-3" />
-            </div>
+          <div>
+          <p className='font-bold text-green-dark'>Centros de reciclaje</p>
+          <div className={`w-32 h-32 rounded-[25px] cursor-pointer flex flex-col items-center justify-center ${selectedFilter === "location" ? 'bg-blue-400' : 'bg-light-green bg-opacity-[60%]'}`} onClick={() => filterLocations(locationCollectionRef, "location")}>
+            <img src={icon5} alt="Image" className="p-3 object-contain" />
           </div>
-
-          <div onClick={() => filterLocations(locationCollectionRef)}>
-            <p className=' font-bold text-green-dark'>Centros de reciclaje</p>
-            <div className='bg-light-green bg-opacity-[60%] rounded-[25px] cursor-pointer'>
-              <img src={icon5} alt="Image" className="p-3" />
-            </div>
           </div>
         </div>
-        <div className='flex mt-10 w-[90%] justify-center items-center'>
+
+        <div className='flex mt-10 w-[90%] justify-center'>
           <GoogleMap locations={locations} />
         </div>
+
         <div className='mt-10'>
           <div className='mb-5 text-center'>
             <h1 className='text-xl font-bold text-green-dark'>Contribuye al Mejoramiento Continuo
               Tu voz importa y puede hacer una gran diferencia.</h1>
           </div>
-          <div className='flex items-center text-center justify-center'>
+        </div>
+      </div>
+      <div className='flex items-center text-center justify-center'>
             <Contact />
           </div>
-        </div>
-        <div />
-      </div>
       <Footer />
     </div>
   );

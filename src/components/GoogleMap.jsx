@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { GoogleMap, LoadScript, Marker, InfoWindow } from '@react-google-maps/api';
+import {AiFillPhone} from 'react-icons/ai'
+import {RiRecycleFill} from 'react-icons/ri'
+import {TbLocationFilled} from 'react-icons/tb'
+
+
 
 const GoogleMaps = ({locations}) => {
   const mapStyles = {        
@@ -61,18 +66,19 @@ const GoogleMaps = ({locations}) => {
               setSelected(null);
             }}
           >
-            <div>
-              <h2 className='text-blue'>{selected.lugar}</h2>
-              <p>{selected.horario}</p>
-              <p>{selected.tipo}</p> 
-              <p>{selected.contacto}</p>
+            <div className='font-bold'>
+              <h2 className='text-blue'>Oficina: <span className='text-black'>{selected.lugar}</span></h2>
+              <p className='text-blue'>Horario: <span className='text-black'>{selected.horario}</span></p>
+              <p><RiRecycleFill className='mr-2 inline text-blue text-[20px]'/>{selected.tipo}</p> 
+              <p><AiFillPhone className='mr-2 inline text-blue text-[14px]' /><span text-blue></span>{selected.contacto}</p>
               <p>
         <a 
           href={`https://www.google.com/maps/dir/?api=1&destination=${selected.lat},${selected.lng}`} 
           target="_blank"
           rel="noopener noreferrer"
+          className='underline text-blue'
         >
-          Navegar aquí
+          <TbLocationFilled className='mr-2 inline text-blue text-[14px]'/>Navegar aquí
         </a>
       </p>
             </div>
