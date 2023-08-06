@@ -4,11 +4,11 @@ import { HiMenu } from 'react-icons/hi';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [navColor,setNavColor] = useState(false);
+  const [navColor, setNavColor] = useState(false);
   const location = useLocation();
 
   const ChangeColor = () => {
-    if(window.scrollY >= 60) {
+    if (window.scrollY >= 60) {
       setNavColor(true)
     } else {
       setNavColor(false)
@@ -24,7 +24,7 @@ const Navbar = () => {
           <Link to="/"><img src={require('../images/logo.png')} height='82' width='100%' alt='logo' className="text-white text-2xl font-bold" /></Link>
           <div className="md:hidden">
             <button onClick={() => setIsOpen(!isOpen)}>
-              <HiMenu className='text-[40px]'/>
+              <HiMenu className='text-[40px]' />
             </button>
           </div>
           <div className={`transition duration-500 ease-in-out transform ${isOpen ? 'block' : 'hidden'} md:flex  md:items-center md:w-auto`}>

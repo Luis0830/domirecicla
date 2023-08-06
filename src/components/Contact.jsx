@@ -36,7 +36,7 @@ const Contact = () => {
   return (
     <div className=" flex items-center text-center justify-center bg-blue bg-opacity-[50%] shadow-md rounded-[25px] px-8 pt-6 pb-8 mb-4 w-full md:w-1/2">
       <form className="w-[50%] mx-5" onSubmit={handleSubmit}>
-        
+
 
         <div className="mb-4">
           <label className="block text-gray-500 text-sm font-bold mb-2">Nombre</label>
@@ -69,19 +69,19 @@ const Contact = () => {
         </div>
 
         <div className="flex justify-center items-center">
-        <div className=" w-[70%] items-center bg-blue justify-center text-center items-center rounded-[30px] cursor-pointer">
-          <button
-            className={`bg-blue hover:bg-blue-700 justify-center text-center items-center text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline ${loader ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
-            type="submit"
-            disabled={loader}
-          >
-            Enviar
-          </button>
-        </div>
+          <div className=" w-[70%] items-center bg-blue justify-center text-center items-center rounded-[30px] cursor-pointer">
+            <button
+              className={`bg-blue hover:bg-blue-700 justify-center text-center items-center text-white font-bold py-2 px-2 rounded focus:outline-none focus:shadow-outline ${loader ? 'opacity-50 cursor-not-allowed' : 'opacity-100'}`}
+              type="submit"
+              disabled={loader}
+            >
+              Enviar
+            </button>
+          </div>
         </div>
       </form>
       <div className="px-10">
-      <img src={icon1} alt="logo" className="inline-block mb-4 w-50" />
+        <img src={icon1} alt="logo" className="inline-block mb-4 w-50" />
       </div>
     </div>
   );

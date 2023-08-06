@@ -54,21 +54,21 @@ function ImgCarouselTwo() {
 
   return (
     <div className='max-w-[98%] h-[580px] w-full m-auto py-10 px-2 relative group'>
-      <img 
+      <img
         src={slides[currentIndex].url}
         alt="Slide"
         className='w-full h-full rounded-2xl object-cover bg-center bg-cover duration-600'
       />
       {/* Text Container */}
       <div className='w-[60%] h-auto absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 flex items-center justify-center text-center'>
-    <div className='text-white text-xl bg-gradient-to-b from-black/60 to-black/40 p-4 rounded-md shadow-lg'>
-      {slides[currentIndex].text.split('\n').map((para, index) => 
-        index === 0 ? 
-        <h2 key={index} className="mb-2 text-2xl font-extrabold text-shadow-custom">{para}</h2> :
-        <p key={index} className="mb-2 text-shadow-custom">{para}</p>
-      )}
-    </div>
-</div>
+        <div className='text-white text-xl bg-gradient-to-b from-black/60 to-black/40 p-4 rounded-md shadow-lg'>
+          {slides[currentIndex].text.split('\n').map((para, index) =>
+            index === 0 ?
+              <h2 key={index} className="mb-2 text-2xl font-extrabold text-shadow-custom">{para}</h2> :
+              <p key={index} className="mb-2 text-shadow-custom">{para}</p>
+          )}
+        </div>
+      </div>
       {/* Left Arrow */}
       <div className='hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer'>
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
@@ -80,12 +80,12 @@ function ImgCarouselTwo() {
       <div className='flex top-4 justify-center py-2'>
         {slides.map((slide, slideIndex) => (
           <div
-          key={slideIndex}
-          onClick={() => goToSlide(slideIndex)}
-          className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? 'text-primary' : 'text-gray-400'}`}
-        >
-          <RxDotFilled />
-        </div>
+            key={slideIndex}
+            onClick={() => goToSlide(slideIndex)}
+            className={`text-2xl cursor-pointer ${slideIndex === currentIndex ? 'text-primary' : 'text-gray-400'}`}
+          >
+            <RxDotFilled />
+          </div>
         ))}
       </div>
     </div>

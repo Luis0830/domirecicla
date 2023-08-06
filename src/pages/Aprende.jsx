@@ -10,12 +10,12 @@ export default function Aprende() {
     <div>
       <Navbar />
       <div>
-      <ImgCarouselTwo />
-      <div className='p-10'>
-      <ResourceLinks />
+        <ImgCarouselTwo />
+        <div className='p-10'>
+          <ResourceLinks />
+        </div>
       </div>
-      </div>
-     <Footer />
+      <Footer />
     </div>
   )
 }

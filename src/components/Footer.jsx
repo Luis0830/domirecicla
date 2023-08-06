@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../images/logo.png'; // reemplaza con tu ruta de logo real
+import logo from '../images/logo.png';
 
 const Footer = () => {
     return (

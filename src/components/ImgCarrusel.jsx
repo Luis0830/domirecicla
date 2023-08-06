@@ -15,9 +15,9 @@ function ImgCarousel() {
   useEffect(() => {
     const slideTimer = setInterval(() => {
       setCurrentIndex((current) => (current + 1) % slides.length);
-    }, 5000); // Change slide every 3 seconds
+    }, 5000); 
 
-    return () => clearInterval(slideTimer); // Clear interval on component unmount
+    return () => clearInterval(slideTimer); 
   }, [slides.length]);
 
   const prevSlide = () => {
